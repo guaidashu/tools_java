@@ -19,7 +19,7 @@ public class ImageScaleTool {
 
     /**
      * @param file
-     * @return
+     * @return A Integer Array which includes the width and height of image.
      */
     public static int[] getImageSize(File file) {
         InputStream inputStream = null;
@@ -54,6 +54,9 @@ public class ImageScaleTool {
     public static void scaleImage(String imgOriginSrc, String imgAimSrc, Map<String, Object> param) {
         // judge operation type which will do
         int type = filterTypeObj(param.get("type"));
+        File file = new File(imgOriginSrc);
+        int imgSize[] = getImageSize(file);
+
     }
 
     /**
