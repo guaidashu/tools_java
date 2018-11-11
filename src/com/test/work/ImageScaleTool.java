@@ -53,18 +53,19 @@ public class ImageScaleTool {
      */
     public static void scaleImage(String imgOriginSrc, String imgAimSrc, Map<String, Object> param) {
         // judge operation type which will do
-        if (!(param.get("type") instanceof Integer)) {
-
-        }
+        int type = filterTypeObj(param.get("type"));
     }
 
     /**
-     *
      * @param type
      * @return A Integer converted from param(type)
      */
     public static int filterTypeObj(Object type) {
-
+        int result = 0;
+        if (type instanceof Integer) {
+            result = (Integer) type;
+        }
+        return result;
     }
 
 }
